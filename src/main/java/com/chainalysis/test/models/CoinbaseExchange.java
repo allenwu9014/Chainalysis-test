@@ -17,6 +17,9 @@ public class CoinbaseExchange implements Exchange{
     private double ask;
     @JsonProperty("bid")
     private double bid;
+    @JsonProperty("link")
+    private String link;
+
 
 
     public CoinbaseExchange() {}
@@ -26,7 +29,9 @@ public class CoinbaseExchange implements Exchange{
         this.bid = bid;
     }
 
-
+    public void setLink(String link) {
+        this.link = link;
+    }
 
     @Override
     public void setAsk(double ask) {

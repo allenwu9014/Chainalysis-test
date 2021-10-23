@@ -40,12 +40,18 @@ public class RecommendationService {
 
     // add a exchange data with BTC data and add to PQ
     public boolean addBTC(Exchange exchange) {
+        if (exchange == null) {
+            return false;
+        }
         priorityQueueBTCMax.offer(exchange);
         priorityQueueBTCMin.offer(exchange);
         return exchangesBTC.add(exchange);
     }
     // add a exchange data with ETH data and add to PQ
     public boolean addETH(Exchange exchange) {
+        if (exchange == null) {
+            return false;
+        }
         priorityQueueETHMax.offer(exchange);
         priorityQueueETHMin.offer(exchange);
         return exchangesETH.add(exchange);

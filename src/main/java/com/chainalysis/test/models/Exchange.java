@@ -10,7 +10,7 @@ public interface Exchange {
     void setType(String type);
     void setAsk(double ask);
     void setBid(double bid);
-
+    void setLink(String link);
 
 
 }

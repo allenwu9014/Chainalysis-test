@@ -18,6 +18,8 @@ public class GeminiExchange implements Exchange{
 
     private double bid;
 
+    @JsonProperty("link")
+    private String link;
 
     public GeminiExchange() {}
 
@@ -57,6 +59,11 @@ public class GeminiExchange implements Exchange{
         return bid;
     }
 
+    @Override
+    public void setLink(String link) {
+        this.link = link;
+    }
+
     public static class Builder {
 
 
@@ -64,6 +71,8 @@ public class GeminiExchange implements Exchange{
         private double ask;
         @JsonProperty("bid")
         private double bid;
+        @JsonProperty("link")
+        private String link;
 
         public void setAsk(double ask) {
             this.ask = ask;
@@ -73,6 +82,9 @@ public class GeminiExchange implements Exchange{
             this.bid = bid;
         }
 
+        public void setLink(String link) {
+            this.link = link;
+        }
         public GeminiExchange build() {
             return new GeminiExchange (this);
         }

@@ -16,6 +16,8 @@ public class CEXExchange implements Exchange{
 
     private double bid;
 
+    @JsonProperty("link")
+    private String link;
 
     public CEXExchange() {}
 
@@ -55,6 +57,9 @@ public class CEXExchange implements Exchange{
         return bid;
     }
 
+    public void setLink(String link) {
+        this.link = link;
+    }
     // initiate the model by builder()
     public static class Builder {
 
@@ -63,6 +68,11 @@ public class CEXExchange implements Exchange{
         private Double ask;
         @JsonProperty("bid")
         private Double bid;
+
+        @JsonProperty("link")
+        private String link;
+
+
 
         public void setAsk(Double ask) {
             this.ask = ask;

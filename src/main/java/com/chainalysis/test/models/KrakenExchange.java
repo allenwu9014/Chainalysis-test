@@ -19,6 +19,9 @@ public class KrakenExchange implements Exchange{
     private double ask;
     private double bid;
 
+    @JsonProperty("link")
+    private String link;
+
     @JsonProperty("result")
     private Result result;
 
@@ -40,7 +43,10 @@ public class KrakenExchange implements Exchange{
         this.bid = bid;
     }
 
-
+    @Override
+    public void setLink(String link) {
+        this.link = link;
+    }
 
     public void setType(String type) {
         this.type = type;
