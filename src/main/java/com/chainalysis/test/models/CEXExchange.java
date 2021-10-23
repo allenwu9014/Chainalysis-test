@@ -1,7 +1,9 @@
 package com.chainalysis.test.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
+@JsonDeserialize(builder = CEXExchange.Builder.class)
 public class CEXExchange implements Exchange{
 
     final private String exchangeName = "CEX.IO";
@@ -10,6 +12,7 @@ public class CEXExchange implements Exchange{
 
 
     private double ask;
+
 
     private double bid;
 
@@ -22,6 +25,15 @@ public class CEXExchange implements Exchange{
     }
 
 
+    @Override
+    public void setAsk(double ask) {
+        this.ask = ask;
+    }
+
+    @Override
+    public void setBid(double bid) {
+        this.bid = bid;
+    }
 
     public void setType(String type) {
         this.type = type;
@@ -43,19 +55,20 @@ public class CEXExchange implements Exchange{
         return bid;
     }
 
+    // initiate the model by builder()
     public static class Builder {
 
 
         @JsonProperty("ask")
-        private double ask;
+        private Double ask;
         @JsonProperty("bid")
-        private double bid;
+        private Double bid;
 
-        public void setAsk(double ask) {
+        public void setAsk(Double ask) {
             this.ask = ask;
         }
 
-        public void setBid(double bid) {
+        public void setBid(Double bid) {
             this.bid = bid;
         }
 

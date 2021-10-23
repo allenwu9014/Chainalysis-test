@@ -1,46 +1,42 @@
 package com.chainalysis.test.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import java.util.List;
-
+import java.util.Objects;
 
 
-public class KrakenExchange implements Exchange{
+public class CoinbaseExchange implements Exchange{
 
-    final private String exchangeName = "Kraken";
+    final private String exchangeName = "Coinbase";
 
     private String type;
 
 
+    @JsonProperty("ask")
     private double ask;
+    @JsonProperty("bid")
     private double bid;
 
-    @JsonProperty("result")
-    private Result result;
 
-    private String[] error;
+    public CoinbaseExchange() {}
 
-
-
-    public KrakenExchange() {}
-
-    public Result getResult() {
-        return result;
-    }
-
-    public void setAsk(double ask) {
+    public CoinbaseExchange(double ask, double bid) {
         this.ask = ask;
-    }
-
-    public void setBid(double bid) {
         this.bid = bid;
     }
 
 
+
+    @Override
+    public void setAsk(double ask) {
+        this.ask = ask;
+    }
+
+    @Override
+    public void setBid(double bid) {
+        this.bid = bid;
+    }
 
     public void setType(String type) {
         this.type = type;
@@ -63,8 +59,4 @@ public class KrakenExchange implements Exchange{
     }
 
 
-    }
-
-
-
-
+}

@@ -12,7 +12,10 @@ public class GeminiExchange implements Exchange{
 
     private String type;
 
+
     private double ask;
+
+
     private double bid;
 
 
@@ -24,6 +27,15 @@ public class GeminiExchange implements Exchange{
     }
 
 
+    @Override
+    public void setAsk(double ask) {
+        this.ask = ask;
+    }
+
+    @Override
+    public void setBid(double bid) {
+        this.bid = bid;
+    }
 
     public void setType(String type) {
         this.type = type;

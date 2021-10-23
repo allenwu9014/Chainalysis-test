@@ -3,7 +3,7 @@ package com.chainalysis.test.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 // sub data of response from Kraken
-public class XXBTZUSD {
+public class XETHZUSD {
     @JsonProperty("a")
     String[] ask;
 

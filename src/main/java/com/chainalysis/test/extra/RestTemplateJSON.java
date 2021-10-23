@@ -12,7 +12,8 @@ import java.net.URI;
 
 
 
-// fix the error for using RestTemplate exchange() with "No suitable HttpMessageConverter found for response type"
+// fix the error for using RestTemplate exchange()
+// with "No suitable HttpMessageConverter found for response type"
 public class RestTemplateJSON extends RestTemplate {
 
     @Override
@@ -20,7 +21,8 @@ public class RestTemplateJSON extends RestTemplate {
                               ResponseExtractor<T> responseExtractor) throws RestClientException
     {
 
-        //logger.info(RestTemplateJSON.class.getSuperclass().getSimpleName() + ".doExecute() is overridden");
+        //logger.info(RestTemplateJSON.class.getSuperclass().getSimpleName()
+        // + ".doExecute() is overridden");
 
         Assert.notNull(url, "'url' must not be null");
         Assert.notNull(method, "'method' must not be null");
