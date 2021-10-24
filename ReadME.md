@@ -1,15 +1,15 @@
-##Chainalysis | Software Engineer, University Grad | Applicant Take Home Test
+## Chainalysis | Software Engineer, University Grad | Applicant Take Home Test
 Goggle Doc
 https://docs.google.com/document/d/1u7y7sZas9JTNsfNZh8ZeLINMLy5obGuReXjhEKqKIGc/edit?usp=sharing
-###Deliverables:
-####1. Link to github with the code
+### Deliverables:
+#### 1. Link to github with the code
 https://github.com/allenwu9014/Chainalysis-test.git
-####2. Detailed instructions on how to build and run
+#### 2. Detailed instructions on how to build and run
 Java version OpenJDK: 11  
 run the test.jar file in dockerDep  
 $java -jar test.jar  
 access web: http://localhost:8080/  
-####3. Answers to below Questionnaire ( included as a markdown file in GH repo)
+#### 3. Answers to below Questionnaire ( included as a markdown file in GH repo)
 + Are there any sub-optimal choices( or short cuts taken due to limited time ) in your implementation?  
   + Since using the heap, if one/more exchange(s) obj is null(fetch data failure), it will not be offered in PQ, and second choose or third will be polled.
   
@@ -32,34 +32,34 @@ Theoretically, there is nothing to change. However, it still needs to be tested 
     + If the time out for fetching or still in waiting, the PQ will poll the current priority to client.
     + not fetch all exchanges on one request, when the number of exchanges is too large. Instead, set a storage area(or DB) for storing all fetch data, fetching will do by every services(Microservices), which will maintain storage area together. The design will make sure online algorithm.
 
-####4. For bonus points, provide a link to live version of the solution
+#### 4. For bonus points, provide a link to live version of the solution
 + access on a public link: http://18.117.85.215/
   + The web is deployed on EC2 AWS
 
 
-##Project Document & Developer Log
+## Project Document & Developer Log
 
-###Requirements:
+### Requirements:
 1. Prices of Bitcoin and Ethereum from two (any) different exchanges/sources.
     + Differentiate buy and sell price clearly
 
 2. Recommendations on which exchange one should buy and/or sell.
     + Recommend where to buy and where to sell. Each of the recommendations can be a different exchange
 
-###Deliverables:
+### Deliverables:
 + Link to github with the code  
 + Detailed instructions on how to build and run  
 + Answers to below Questionnaire ( included as a markdown file in GH repo)  
 + For bonus points, provide a link to live version of the solution  
 
-###Other Info:
+### Other Info:
 + If BTC is 10000$ to buy on Exchange A and 10050$ to buy on Exchange B, you would recommend to buy on Exchange A.   
 + Any front end technology is fine. We use React  
 + Any backend technology is fine. We use spring boot/java  
 + You can pick any exchange for pricing. If exchange price is unavailable, use price from any service provider such as blockchain.com  
 + Your webpage is not hard coding the prices. It should talk to its own backend to fetch the prices. And that backend fetches prices from other exchanges/service providers  
 
-###Search:
+### Search:
 Exchanges:
 
 		Coinbase:
@@ -91,8 +91,8 @@ b: bid
 			Ignore
 
 
-###System Design:
-####Back-end:
+### System Design:
+#### Back-end:
   + Hight-Level:
     1. use Spring Boot to implement the back-end service
     2. handle the request from front-end via REST API
@@ -126,13 +126,13 @@ System Structure:
 
 
 
-##Developer Log
+## Developer Log
 Back-End
 
-####10/20 
+#### 10/20 
 project initiated
 
-####10/21
+#### 10/21
 built models for 4 exchanges response data  
 set the /recommend controller  
 built recommend service  
@@ -142,7 +142,7 @@ Error by using exchange() with  "No suitable HttpMessageConverter found for resp
 fixed the error with override part functions of RestTemplate to implement conversion for JSON type  
 integrated request of Coinbase which uses two urls to call the buy/sell data seperately  
 
-####10/22
+#### 10/22
 Implemented PQ to poll the best point on ASK and BID  
 ArrayList to show all the exchanges  
 Optimized: Spring Beans and Autowired  
@@ -152,17 +152,17 @@ Back-end Test Completed
 
 Front-end:  
 
-####10/22
+#### 10/22
 Front-end init  
 use Material UI to handle the structure and displaying of page  
 fetch data by axios library  
 
-####10/23
+#### 10/23
 added loading circular when data is loading  
 added a switch to auto refresh or manual refresh  
 Front-end test Completed  
 
-####10/24
+#### 10/24
 Dve:  
 package front-end codes with back-end to jar file  
 deploy the web app to EC2 AWS  
