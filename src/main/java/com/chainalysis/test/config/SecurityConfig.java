@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 
+// basic authorization for any request and
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
